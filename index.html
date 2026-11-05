@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sophie Zhang — Product Manager</title>
+<meta name="description" content="Sophie (Xinran) Zhang: product, design and marketing science. Columbia Business School MS, Cornell Human Centered Design.">
+<style>
+  :root {
+    --bg: #F7F3EC;
+    --card: #FFFDF8;
+    --ink: #151515;
+    --muted: #5a5550;
+    --burgundy: #6D1A2B;
+    --line: #E2DACB;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--sans); }
+  a { color: var(--burgundy); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--burgundy); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(247,243,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 54px; gap: 16px; }
+  nav .brand { font-family: var(--serif); font-weight: 700; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  nav ul { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; }
+  nav li a { display: block; padding: 6px 12px; border-radius: 999px; color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 500; }
+  nav li a:hover, nav li a.active { background: var(--burgundy); color: #fff; }
+
+  header.hero { padding: 72px 0 48px; }
+  .eyebrow { color: var(--burgundy); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 13px; margin: 0 0 12px; }
+  h1 { font: 700 clamp(40px, 7vw, 68px)/1.05 var(--serif); margin: 0 0 8px; letter-spacing: -.02em; }
+  .aka { color: var(--muted); font-size: 18px; margin: 0 0 20px; }
+  .lede { font-size: 19px; max-width: 640px; margin: 0 0 28px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 999px; border: 1.5px solid var(--ink); color: var(--ink); text-decoration: none; font-weight: 600; font-size: 15px; }
+  .btn.primary { background: var(--burgundy); border-color: var(--burgundy); color: #fff; }
+  .btn:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+  section { padding: 44px 0; border-top: 1px solid var(--line); }
+  h2 { font: 700 30px/1.2 var(--serif); margin: 0 0 24px; }
+  h2::before { content: ""; display: inline-block; width: 28px; height: 4px; background: var(--burgundy); margin: 0 12px 6px 0; vertical-align: middle; }
+
+  .grid { display: grid; gap: 18px; }
+  .grid.two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .tile { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; transition: transform .15s, box-shadow .15s, border-color .15s; }
+  .tile:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(21,21,21,.07); border-color: var(--burgundy); }
+  .tile h3 { font: 700 20px/1.25 var(--serif); margin: 0; }
+  .meta { color: var(--muted); font-size: 14px; margin: 4px 0 0; }
+  .role { color: var(--burgundy); font-weight: 600; margin: 6px 0 12px; }
+  .tile ul { margin: 0; padding-left: 18px; }
+  .tile li { margin-bottom: 8px; }
+  .tile li::marker { color: var(--burgundy); }
+  .tile p { margin: 10px 0 0; }
+  .tile .label { font-weight: 600; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 600; background: var(--burgundy); color: #fff; border-radius: 999px; padding: 2px 10px; margin-left: 6px; vertical-align: middle; }
+
+  .skills dl { margin: 0; display: grid; gap: 14px; }
+  .skills .row { display: grid; grid-template-columns: 190px 1fr; gap: 12px; align-items: start; }
+  .skills dt { font-weight: 700; font-family: var(--serif); }
+  .skills dd { margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { border: 1px solid var(--ink); border-radius: 999px; padding: 3px 12px; font-size: 14px; background: var(--card); }
+
+  footer { background: var(--ink); color: #eee; padding: 40px 0; margin-top: 20px; }
+  footer a { color: #fff; }
+  footer p { margin: 0 0 6px; }
+
+  @media (max-width: 640px) {
+    nav .brand { display: none; }
+    nav .wrap { justify-content: center; }
+    .skills .row { grid-template-columns: 1fr; gap: 6px; }
+    header.hero { padding-top: 48px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .tile { transition: none; } }
+</style>
+</head>
+<body>
+
+<nav aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top">Sophie Zhang</a>
+    <ul>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">Product · Design · Marketing Science</p>
+    <h1>Sophie (Xinran) Zhang</h1>
+    <p class="aka">New York, NY</p>
+    <p class="lede">I turn user research into products people actually want to use. Founder of Roomwise, MS candidate at Columbia Business School, and a Cornell human-centered design grad who likes data as much as a good floor plan.</p>
+    <div class="chips">
+      <a class="btn primary" href="mailto:XinrZhang28@gsb.columbia.edu">Email me</a>
+      <a class="btn" href="https://github.com/sophiezhang628">GitHub</a>
+      <a class="btn" href="https://room-wise.com">Roomwise</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="grid two">
+      <article class="tile">
+        <h3>Columbia Business School</h3>
+        <p class="meta">New York, NY · 2026–2027</p>
+        <p class="role">MS, Marketing Science, December 2027 · GMAT: 675</p>
+        <p><span class="label">Coursework:</span> Product Management (MBA), Python for Business (PhD), User Experience Design (MBA), Statistical Modeling, Marketing Research, Generative AI for Business (MBA), Behavioral Economics &amp; Decision Making (MBA), Brand Design (MBA)</p>
+        <p><span class="label">Club engagements:</span> CBS Technology Club, CBS Artificial Intelligence Club, Retail &amp; Luxury Club, Product Marketing Club</p>
+      </article>
+      <article class="tile">
+        <h3>Cornell University</h3>
+        <p class="meta">Ithaca, NY · 2022–2026</p>
+        <p class="role">BS, Human Centered Design, Minor in Business · Graduated May 2026</p>
+        <p><span class="label">GPA:</span> 3.96/4.0 (Dean's List 2022–2026)</p>
+        <p><span class="label">Coursework:</span> Brand Strategy, Marketing, Business Strategy, UIUX Design, Spreadsheet Modeling, Organizational Behavior, VBA for Business</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Professional Experience</h2>
+    <div class="grid">
+      <article class="tile">
+        <h3>Roomwise <span class="tag">Present</span></h3>
+        <p class="meta">room-wise.com · New York, NY · 2025 – Present</p>
+        <p class="role">Founder &amp; Product Manager</p>
+        <ul>
+          <li>Defined market need and product strategy through quantitative user research, drafted PRD and led end-to-end development of interactive furnishing planner that helps users visualize furniture in their new home, MVP achieved 93% beta-user satisfaction across 15 testers.</li>
+          <li>Evaluated AI image to model workflows and optimized cost–quality, cost-latency tradeoffs through comparing multiple API capability and workflow, achieved delivering customized 3D models at 98% precision, within 10s, cost $0.02 per generation.</li>
+          <li>Launched budget-aware furnishing recommendations feature based on current room style and remaining balance, achieving 68% recommendation acceptance and reducing room-planning time by 270% across 37 beta users.</li>
+        </ul>
+      </article>
+
+      <article class="tile">
+        <h3>Gensler</h3>
+        <p class="meta">San Francisco, CA · Summer 2026</p>
+        <p class="role">Interior Design Strategy Intern</p>
+        <ul>
+          <li>Partnered with San Francisco Public Library to analyze visitor behavior across 5 main user groups through 10 ethnography observations and 30+ stakeholder interviews, synthesized findings into user journeys, programming and wayfinding recommendations for renovation strategy, translated strategy to interior design proposal, projected to increase visitor flow by 35%, user satisfaction by 17%.</li>
+          <li>Owned development of 4 workplace experience areas for a confidential AI client from concept through design development, translating 20+ stakeholder needs into design requirements and 5+ design iterations, coordinated decisions across 3 multidisciplinary teams.</li>
+        </ul>
+      </article>
+
+      <article class="tile">
+        <h3>Tiffany &amp; Co.</h3>
+        <p class="meta">New York, NY · Summer 2025</p>
+        <p class="role">Brand Marketing – Global Events &amp; Exhibitions Intern</p>
+        <ul>
+          <li>Developed the customer experience strategy for Tiffany's 2026 Blue Book High Jewelry launch, translating brand objectives into an end-to-end physical journey across exhibition environments, designed the exhibition and hospitality experience for the event.</li>
+          <li>Aligned GEE team with 3 creative agencies on upcoming 6-room “<em>With Love</em>” brand exhibition, collaboratively designed guest journey with annotated floor plan, 10+ spatial renderings of all rooms to align vision across all creative and production agencies, ensured brand alignment.</li>
+        </ul>
+      </article>
+
+      <article class="tile">
+        <h3>Estée Lauder</h3>
+        <p class="meta">Shanghai, China · Summer 2024</p>
+        <p class="role">Retail Excellence (Product Analytics) Intern</p>
+        <ul>
+          <li>Analyzed sales, 1000+ SKU performance, sell-through and out-of-stock rates across 60+ brick-and-mortar stores across the country to rate store performance and inform inventory allocation and product replenishment decisions, achieved 120% of seasonal sales goal.</li>
+          <li>Conducted detailed cross-analysis of 700+ inventory checklists and sales data from retail stores, identified data discrepancies, and provided actionable insights to support inventory accuracy and inform business optimization strategies.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Project Experience</h2>
+    <div class="grid two">
+      <article class="tile">
+        <h3>LinkedIn</h3>
+        <p class="meta">Product Management Project (CBS Product Management Course)</p>
+        <ul>
+          <li>Uncovered key networking pain point through 15 user interviews, defining unmet need of post-connection relationship management targeting 200M+ active networking users. Evaluated 6 product ideas with opportunity and cost, translated user needs into PRD. Developed new feature that helps with keeping track of networking details, personalized outreach and post-connection follow-ups.</li>
+          <li>Designed and prototyped the new feature with Claude and conducted beta testing with 12 users, achieving 92% core flow completion, reduced average time to schedule a follow-up by 71% (from 4.1 minutes to 1.2 minutes), with 85% stated intention to use.</li>
+        </ul>
+      </article>
+      <article class="tile">
+        <h3>GAP</h3>
+        <p class="meta">Marketing Research (CBS Marketing Intelligence Course)</p>
+        <ul>
+          <li>Conducted mixed-method customer research combining secondary analysis of 1M+ consumer data, 6 interviews, 4 ethnographies, and conjoint analysis of 300 survey to identify key customer segments, purchase drivers, satisfaction gaps, for GAP's Denim edit.</li>
+          <li>Synthesized quantitative and qualitative findings into segment-specific value propositions and actionable recommendations across product assortment, brand positioning, and marketing strategy, projected to improve customer base by 8%, increased seasonal sales by 6.3%.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="tile">
+      <dl>
+        <div class="row"><dt>Data Analytic Skills</dt><dd>
+          <span class="pill">Microsoft Suite</span><span class="pill">Python</span><span class="pill">SQL</span><span class="pill">Data Visualization (Tableau)</span><span class="pill">Excel VBA Programming</span><span class="pill">Factor Analysis</span></dd></div>
+        <div class="row"><dt>Product &amp; Research</dt><dd>
+          <span class="pill">Customer Research</span><span class="pill">Market Research</span><span class="pill">Conjoint Analysis</span><span class="pill">Prototyping</span><span class="pill">Data Analysis</span><span class="pill">A/B Testing</span><span class="pill">Focus Group</span></dd></div>
+        <div class="row"><dt>Creative Skills</dt><dd>
+          <span class="pill">Adobe Suite (Photoshop, InDesign, Illustrator)</span><span class="pill">Figma UX</span><span class="pill">SketchUp</span><span class="pill">CapCut</span></dd></div>
+        <div class="row"><dt>Languages</dt><dd>
+          <span class="pill">Fluent in English</span><span class="pill">Fluent in Mandarin</span><span class="pill">Limited working proficiency in French</span></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Let's talk.</strong></p>
+    <p><a href="mailto:XinrZhang28@gsb.columbia.edu">XinrZhang28@gsb.columbia.edu</a> · <a href="https://github.com/sophiezhang628">github.com/sophiezhang628</a></p>
+    <p style="color:#aaa;font-size:14px">© 2026 Sophie (Xinran) Zhang</p>
+  </div>
+</footer>
+
+<script>
+  // Highlight the nav link for the section in view.
+  const links = document.querySelectorAll('nav li a');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('main section').forEach(s => io.observe(s));
+</script>
+</body>
+</html>
